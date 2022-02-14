@@ -65,7 +65,7 @@ class _homePageState extends State<homePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 10),
-                  currentWeather((data?.temp)! <= 0? Icons.ac_unit : Icons.wb_sunny_sharp, '${data?.temp} °C', '${data?.cityName}'),
+                  currentWeather((data?.temp)! <= 0? Icons.ac_unit : Icons.wb_sunny_sharp, data?.temp, '${data?.cityName}'),
                   const SizedBox(height: 10),
                   const Text('Additional Information',
                     style: TextStyle(fontSize: 16),
@@ -73,7 +73,7 @@ class _homePageState extends State<homePage> {
                   const SizedBox(height: 30),
                   currentDateText(),
                   const SizedBox(height: 25),
-                  additionalInformation('${data?.wind} m/s', "${data?.pressure} hPa", "${data?.humidity} %",'${data?.feels_like} °C'),
+                  additionalInformation('${data?.wind}', "${data?.pressure}", "${data?.humidity}","${data?.feels_like}"),
                 ],
             );
           }
